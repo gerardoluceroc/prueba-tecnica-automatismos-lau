@@ -20,7 +20,7 @@ public class UserService {
         userRepository.save(user);
     }
 
-    //Eliminar a usuario de acuerdo a su ID
+    //Eliminar a usuario
     public void deleteUser(UserEntity user){
         userRepository.delete(user);
     }

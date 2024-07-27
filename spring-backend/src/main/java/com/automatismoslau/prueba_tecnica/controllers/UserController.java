@@ -68,7 +68,7 @@ public class UserController {
         } 
         //En caso de haber un error, se informa en la respuesta. Por seguridad no se envía el error como tal.
         catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al eliminar el usuario");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al eliminar el usuario" + e);
         }
         
     }
