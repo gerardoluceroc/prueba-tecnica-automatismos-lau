@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  frontend-react:
+    container_name: react-lau-container
+    build:
+      context: ./frontend-react
+      dockerfile: Dockerfile
+    ports:
+      - "4173:4173"
+    depends_on:
+      - spring-backend
+
+  spring-backend:
+    container_name: spring-lau-container
+    build:
+      context: ./spring-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: mysql_container
+    image: mysql:latest
+    ports:
+      - "33060:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_automatismos_lau
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root123
+    volumes:
+      - db_data:/var/lib/mysql

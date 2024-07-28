@@ -5,8 +5,11 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { TextField } from '@mui/material';
+import RegisterForm from './RegisterForm';
 
-export default function DeleteUserDialog({ isOpen, onClose, executeFunction}) {
+
+export default function RegisterUserDialog({ isOpen, onClose, user}) {
 
   const deleteSelectedUser = () => {
 
@@ -24,17 +27,9 @@ export default function DeleteUserDialog({ isOpen, onClose, executeFunction}) {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Eliminar usuario"}
+          {"Editar/Registrar Usuario"}
         </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            ¿Está seguro que desea eliminar a este usuario?
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => deleteSelectedUser(null)}>Aceptar</Button>
-          <Button onClick={onClose}>Cancelar</Button>
-        </DialogActions>
+        <RegisterForm user={user}/>
       </Dialog>
     </React.Fragment>
   );
