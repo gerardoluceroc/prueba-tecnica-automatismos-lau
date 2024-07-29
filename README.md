@@ -1,4 +1,4 @@
-# Prueba técnica de ItnovAI
+# Prueba técnica de Automatismos lau
 Prueba técnica de la empresa automatismos lau.
 * Objetivo: Crear una Aplicación Web que permita ingresar Personas a una Base de Datos y que estas puedan ser
 visualizadas a través del navegador en un formato de Tabla de Datos, donde a su vez se puedan ejecutar
