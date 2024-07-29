@@ -7,11 +7,12 @@ services:
       context: ./frontend-react
       dockerfile: Dockerfile
     ports:
-      - "4173:4173"
+      - "5173:5173"
     depends_on:
       - spring-backend
 
   spring-backend:
+    restart: always
     container_name: spring-lau-container
     build:
       context: ./spring-backend
@@ -29,7 +30,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: db_automatismos_lau
-      MYSQL_USER: root
       MYSQL_PASSWORD: root123
     volumes:
       - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

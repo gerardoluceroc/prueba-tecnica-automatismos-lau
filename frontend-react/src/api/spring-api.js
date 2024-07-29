@@ -28,8 +28,11 @@ export const deleteUser = async (user) => {
             throw new Error(`Error al eliminar el usuario: ${response.status}`);
         }
 
-        const data = await response.json();
-        return data;
+        setTimeout(() => {
+            //Se recarga la pagina luego de 1 segundo
+            window.location.reload();
+          }, 1000);
+
     } catch (error) {
         console.error('Error al eliminar el usuario:', error);
         throw error;
@@ -54,14 +57,12 @@ export const CreateUser = async (user) => {
 
         if (!response.ok) {
             throw new Error(`Error al crear el usuario: ${response.status}`);
-        }
+        };
 
-        // const data = await response.json();
-
-        // Recarga la página actual después de 3 segundos (3000 milisegundos)
-        // setTimeout(function() {
-        //     location.reload();
-        // }, 2000);
+        setTimeout(() => {
+            //Se recarga la pagina luego de 1 segundo
+            window.location.reload();
+          }, 1000);
     } catch (error) {
         console.error('Error al crear el usuario:', error);
         throw error;

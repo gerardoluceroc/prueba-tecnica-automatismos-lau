@@ -11,13 +11,6 @@ import RegisterForm from './RegisterForm';
 
 export default function RegisterUserDialog({ isOpen, onClose, user}) {
 
-  const deleteSelectedUser = () => {
-
-    //Se ejecuta la función, en este caso aquella que le envía al servidor la petición para eliminar un usario específico
-    executeFunction();
-    onClose();
-  };
-
   return (
     <React.Fragment>
       <Dialog
